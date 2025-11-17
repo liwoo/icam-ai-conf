@@ -1,46 +1,19 @@
 export function ConferenceFooter() {
   return (
-    <footer id="contact" className="bg-gradient-to-b from-brand-red-dark to-brand-dark-red">
+    <footer
+      id="contact"
+      className="bg-gradient-to-b from-brand-red-dark to-brand-dark-red"
+    >
       <div className="mx-auto max-w-7xl px-6 py-12">
         <div className="grid gap-8 md:grid-cols-3 md:items-start">
           {/* Left: Logo and Description */}
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white/10">
-                <svg
-                  className="h-7 w-7 text-white"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M12 2L2 7L12 12L22 7L12 2Z"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M2 17L12 22L22 17"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M2 12L12 17L22 12"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
-              <div className="flex flex-col leading-tight">
-                <span className="text-xl font-bold tracking-tight text-white">
-                  ICTAM
-                </span>
-              </div>
+              <img
+                src="/logos/brand/ictam-logo-horizontal-white.svg"
+                alt="ICTAM Logo"
+                className="h-24"
+              />
             </div>
             <p className="max-w-xs text-sm leading-relaxed text-white/80">
               Global Largest Conference Annual AI Conference
