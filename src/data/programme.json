@@ -1,0 +1,361 @@
+{
+  "event": "2025 ICTAM Annual General Meeting and Innovation Awards Program",
+  "dates": "19-23 November 2025",
+  "venue": "Sunbird Nkopola Lodge, Mangochi",
+  "schedule": [
+    {
+      "day": "Tuesday, 18 November 2025",
+      "sessions": [
+        {
+          "time": "14:00 - 17:00",
+          "title": "Arrival and Registration of Trainees",
+          "type": "registration"
+        }
+      ]
+    },
+    {
+      "day": "Wednesday, 19 November 2025",
+      "sessions": [
+        {
+          "time": "8:00 - 16:00",
+          "title": "Trainings",
+          "type": "training"
+        }
+      ]
+    },
+    {
+      "day": "Thursday, 20 November 2025",
+      "sessions": [
+        {
+          "time": "8:00 - 14:00",
+          "title": "Trainings",
+          "type": "training"
+        },
+        {
+          "time": "10:00 - 17:00",
+          "title": "Arrival of Conference Participants, Event Registration and Collection of Complementary Materials",
+          "type": "registration"
+        }
+      ]
+    },
+    {
+      "day": "Friday, 21 November 2025",
+      "dayNumber": 1,
+      "subtitle": "Start of Main Event",
+      "sessions": [
+        {
+          "time": "7:50",
+          "title": "All Seated",
+          "type": "administrative"
+        },
+        {
+          "time": "8:00",
+          "title": "Opening Prayer",
+          "type": "ceremony"
+        },
+        {
+          "time": "8:05",
+          "title": "Welcome by General Manager",
+          "type": "speech"
+        },
+        {
+          "time": "8:10",
+          "title": "Speech by President",
+          "type": "speech"
+        },
+        {
+          "time": "8:20",
+          "title": "Presentation by Public Private Privatisation Commission (PPPC) - DIGMAP",
+          "type": "presentation"
+        },
+        {
+          "time": "8:40",
+          "title": "Presentation by National Bank of Malawi",
+          "type": "presentation"
+        },
+        {
+          "time": "8:50",
+          "title": "Speech by Guest of Honour",
+          "speaker": "Right Honourable, Dr. Jane Mayemu Ansah, SC, Retired",
+          "type": "keynote"
+        },
+        {
+          "time": "9:30",
+          "title": "Group Photo",
+          "type": "administrative"
+        },
+        {
+          "time": "10:00",
+          "title": "Health Break",
+          "type": "break"
+        },
+        {
+          "time": "10:30",
+          "title": "How AI Democratizes Resilient, Risk-Aware Innovation and Scalable Digital Transformation",
+          "speaker": "Dr. Charles C. Phiri",
+          "speakerTitle": "Executive Director – SME AI/ML Innovation, JPMorgan Chase, UK",
+          "type": "keynote"
+        },
+        {
+          "time": "11:10",
+          "title": "Sponsor slot",
+          "type": "sponsor"
+        },
+        {
+          "time": "11:20",
+          "title": "AI for Justice: Strengthening Legal Systems and Access to Justice through Technology",
+          "speaker": "Counsel Khumbo Bonzoe Soko",
+          "speakerTitle": "Managing Consultant & Litigation Lead, Soko & Co. | Former Chairperson, Malawi Law Society",
+          "type": "presentation"
+        },
+        {
+          "time": "12:00",
+          "title": "Sponsorship Slot",
+          "type": "sponsor"
+        },
+        {
+          "time": "12:10",
+          "title": "Innovation Pitching - Fintech and Digital Economy",
+          "type": "pitching"
+        },
+        {
+          "time": "12:20",
+          "title": "Innovation Pitching - Fintech and Digital Economy",
+          "type": "pitching"
+        },
+        {
+          "time": "12:30",
+          "title": "Lunch Break",
+          "type": "break"
+        },
+        {
+          "time": "13:30",
+          "title": "Building AI Capacity and Ecosystems in Malawi",
+          "type": "presentation"
+        },
+        {
+          "time": "14:10",
+          "title": "Panel Discussion: Shaping Malawi's Future: National AI Policy, Framework, and Regulatory Landscape",
+          "type": "panel"
+        },
+        {
+          "time": "15:00",
+          "title": "Pitching for Agritech",
+          "type": "pitching"
+        },
+        {
+          "time": "15:10",
+          "title": "Pitching for Agritech",
+          "type": "pitching"
+        },
+        {
+          "time": "15:20",
+          "title": "Transforming Education With AI: Personalized Learning And Smart Classroom",
+          "speaker": "Dr. Serah Beza Mbewe",
+          "speakerTitle": "Director of ICT at Levy Mwanawasa Medical University (LMMU)",
+          "type": "presentation"
+        },
+        {
+          "time": "16:00",
+          "title": "END of Day 1 & Networking",
+          "type": "networking"
+        },
+        {
+          "time": "18:30",
+          "title": "Official Opening Dinner",
+          "venue": "Tent next to Nkopola Restaurant",
+          "dressCode": "Tropical",
+          "entertainment": "Cultural performances and DJ",
+          "type": "dinner"
+        },
+        {
+          "time": "21:30",
+          "title": "End of Dinner",
+          "type": "administrative"
+        }
+      ]
+    },
+    {
+      "day": "Saturday, 22 November 2025",
+      "dayNumber": 2,
+      "sessions": [
+        {
+          "time": "8:00",
+          "title": "Panel Discussion: Cybersecurity and AI: Safeguarding Malawi's Digital Landscape",
+          "type": "panel"
+        },
+        {
+          "time": "8:40",
+          "title": "Presentation of 1st place for Fintech, Agritech, eHealth",
+          "type": "awards"
+        },
+        {
+          "time": "9:10",
+          "title": "AI in Health, Agriculture, and Education for Sustainable Development",
+          "type": "presentation"
+        },
+        {
+          "time": "9:50",
+          "title": "Partnership/Sponsor 5",
+          "type": "sponsor"
+        },
+        {
+          "time": "10:05",
+          "title": "Partnership/Sponsor 6",
+          "type": "sponsor"
+        },
+        {
+          "time": "10:20",
+          "title": "Health Break",
+          "type": "break"
+        },
+        {
+          "time": "10:40",
+          "title": "Presentation of 1st place for Emerging Technologies, SheCodes, Open Source",
+          "type": "awards"
+        },
+        {
+          "time": "11:10",
+          "title": "Bridging the Digital Divide: Ensuring Inclusive and Equitable AI Adoption in Malawi",
+          "type": "presentation"
+        },
+        {
+          "time": "11:50",
+          "title": "Partnership/Sponsor 7",
+          "type": "sponsor"
+        },
+        {
+          "time": "12:00",
+          "title": "Ethical AI Adoption and Responsible Innovation",
+          "type": "presentation"
+        },
+        {
+          "time": "12:40",
+          "title": "Lunch",
+          "type": "break"
+        },
+        {
+          "time": "14:20",
+          "title": "9th Annual General Meeting (Members only)",
+          "type": "agm",
+          "agenda": [
+            "President's report",
+            "Move motion to adopt and Approve Reviewed Constitution and Electoral Code",
+            "Move motion to adopt and approve ICTAM's CPD Policy",
+            "Move motion to approve 2024 Auditors"
+          ]
+        },
+        {
+          "time": "15:00",
+          "title": "Presentation and Approval of 2024 Audited Financial Statements",
+          "type": "agm"
+        },
+        {
+          "time": "15:30",
+          "title": "Elections of Members of The CRC Committee",
+          "type": "agm"
+        },
+        {
+          "time": "16:30",
+          "title": "END OF DAY 2: Networking",
+          "type": "networking"
+        },
+        {
+          "time": "18:30",
+          "title": "Awards and Official Closing Dinner",
+          "venue": "Beach",
+          "dressCode": "Smart (Black, Gold and Red)",
+          "entertainment": "Live Band, Malinga Mafia and Performance by Zeze Courtesy of Cape Star",
+          "type": "dinner",
+          "activities": [
+            {
+              "time": "18:30",
+              "activity": "All seated"
+            },
+            {
+              "time": "18:30",
+              "activity": "Statement by ICTAM President"
+            },
+            {
+              "time": "18:40",
+              "activity": "Run a video for Innovations Categories Briefs"
+            },
+            {
+              "time": "18:55",
+              "activity": "Dinner - Slow Music and playing of Video of Innovations pitching for all categories"
+            },
+            {
+              "time": "19:25",
+              "activity": "Announcing Winners and Presentation of Trophies",
+              "categories": [
+                {
+                  "category": "Agritech",
+                  "awards": ["Winner 1", "Winner 2", "Winner 3"]
+                },
+                {
+                  "category": "eHealth",
+                  "awards": ["Winner 1", "Winner 2", "Winner 3"]
+                },
+                {
+                  "category": "Emerging Technologies",
+                  "awards": ["Winner 1", "Winner 2", "Winner 3"]
+                },
+                {
+                  "category": "Open Source",
+                  "awards": ["Winner 1", "Winner 2", "Winner 3"]
+                },
+                {
+                  "category": "SheCodes",
+                  "awards": ["Winner 1", "Winner 2", "Winner 3"]
+                },
+                {
+                  "category": "Fintech",
+                  "awards": ["Winner 1", "Winner 2", "Winner 3"]
+                }
+              ]
+            },
+            {
+              "time": "20:25",
+              "activity": "Speeches by Innovations Awards Sponsors",
+              "sponsors": ["National Bank of Malawi", "UNDP"]
+            },
+            {
+              "time": "20:25",
+              "activity": "Closing Remarks by ICTAM President"
+            },
+            {
+              "time": "20:45",
+              "activity": "Bar opens / Live Band"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "innovationCategories": [
+    {
+      "name": "Agritech",
+      "description": "Agricultural technology innovations"
+    },
+    {
+      "name": "eHealth",
+      "description": "Digital health and medical technology innovations"
+    },
+    {
+      "name": "Emerging Technologies",
+      "description": "Cutting-edge technology innovations"
+    },
+    {
+      "name": "Open Source",
+      "description": "Open source software and technology contributions"
+    },
+    {
+      "name": "SheCodes",
+      "description": "Women in technology innovations"
+    },
+    {
+      "name": "Fintech",
+      "description": "Financial technology and digital economy innovations"
+    }
+  ]
+}

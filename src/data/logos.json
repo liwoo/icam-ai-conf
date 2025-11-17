@@ -1,0 +1,135 @@
+{
+  "organizationLogos": {
+    "ictam": {
+      "name": "ICTAM",
+      "fullName": "ICT Association of Malawi",
+      "type": "organizer",
+      "logo": "/logos/ICTAM Logo.png",
+      "description": "ICT Association of Malawi - Host organization for the 2025 AGM and Innovation Awards",
+      "website": "https://www.ictam.org.mw",
+      "category": "organizer"
+    }
+  },
+  "sponsorLogos": [
+    {
+      "id": "fcb",
+      "name": "FCB",
+      "fullName": "First Capital Bank",
+      "logo": "/logos/FCB logo.png",
+      "type": "sponsor",
+      "category": "financial",
+      "tier": "platinum",
+      "description": "Financial services partner"
+    },
+    {
+      "id": "mtl",
+      "name": "MTL",
+      "fullName": "MTL (Malawi Telecommunications Limited)",
+      "logo": "/logos/MTL Logo.png",
+      "type": "sponsor",
+      "category": "telecommunications",
+      "tier": "platinum",
+      "description": "Telecommunications partner"
+    },
+    {
+      "id": "click-mobile",
+      "name": "Click Mobile",
+      "fullName": "Click Mobile",
+      "logo": "/logos/Click Mobile logo.png",
+      "type": "sponsor",
+      "category": "telecommunications",
+      "tier": "gold",
+      "description": "Mobile telecommunications and technology services"
+    },
+    {
+      "id": "castel",
+      "name": "Castel",
+      "fullName": "Castel Malawi",
+      "logo": "/logos/Castel Logo.png",
+      "type": "sponsor",
+      "category": "beverages",
+      "tier": "gold",
+      "description": "Beverages and hospitality partner"
+    },
+    {
+      "id": "oranux",
+      "name": "Oranux",
+      "fullName": "Oranux Technologies",
+      "logo": "/logos/oranux logo.png",
+      "type": "sponsor",
+      "category": "technology",
+      "tier": "silver",
+      "description": "Technology solutions and services"
+    },
+    {
+      "id": "heslb",
+      "name": "HESLB",
+      "fullName": "Higher Education Students' Loans Board",
+      "logo": "/logos/HESLB logo.png",
+      "type": "sponsor",
+      "category": "education",
+      "tier": "silver",
+      "description": "Higher education financing partner"
+    }
+  ],
+  "logoCategories": {
+    "organizer": {
+      "title": "Event Organizer",
+      "description": "The organizing body for the 2025 ICTAM AGM and Innovation Awards",
+      "logos": ["ictam"]
+    },
+    "platinum": {
+      "title": "Platinum Sponsors",
+      "description": "Premier partners supporting the ICTAM 2025 event",
+      "logos": ["fcb", "mtl"]
+    },
+    "gold": {
+      "title": "Gold Sponsors",
+      "description": "Key partners supporting innovation and technology development",
+      "logos": ["click-mobile", "castel"]
+    },
+    "silver": {
+      "title": "Silver Sponsors",
+      "description": "Supporting partners contributing to the success of the event",
+      "logos": ["oranux", "heslb"]
+    }
+  },
+  "displaySettings": {
+    "sponsorWall": {
+      "enabled": true,
+      "layout": "tiered",
+      "showTitles": true,
+      "animateOnScroll": true,
+      "logoSizes": {
+        "platinum": {
+          "maxWidth": 200,
+          "maxHeight": 80
+        },
+        "gold": {
+          "maxWidth": 160,
+          "maxHeight": 65
+        },
+        "silver": {
+          "maxWidth": 140,
+          "maxHeight": 55
+        }
+      }
+    },
+    "footer": {
+      "enabled": true,
+      "showAll": true,
+      "grayscale": false,
+      "maxHeight": 40
+    },
+    "navbar": {
+      "showICTAM": true,
+      "position": "left",
+      "maxHeight": 50
+    }
+  },
+  "alternativeFormats": {
+    "note": "If SVG or other formats are needed, they should be added to the public/logos/ directory",
+    "preferredFormats": ["svg", "png"],
+    "minimumResolution": "300dpi for print materials"
+  }
+}
