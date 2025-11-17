@@ -15,7 +15,7 @@ const sponsors = sponsorData.sponsorLogos as Sponsor[]
 const tierConfig = {
   platinum: {
     label: "Platinum Sponsors",
-    color: "from-slate-100 to-slate-50",
+    color: "from-slate-600 to-gray-400",
     size: "h-32 md:h-40",
     gridCols: "grid-cols-1 md:grid-cols-2",
     maxWidth: 200,
@@ -23,7 +23,7 @@ const tierConfig = {
   },
   gold: {
     label: "Gold Sponsors",
-    color: "from-slate-100 to-slate-50",
+    color: "from-amber-700 to-amber-400",
     size: "h-28 md:h-32",
     gridCols: "grid-cols-2 md:grid-cols-2",
     maxWidth: 160,
@@ -31,7 +31,7 @@ const tierConfig = {
   },
   silver: {
     label: "Silver Sponsors",
-    color: "from-slate-100 to-slate-50",
+    color: "from-gray-300 to-gray-500",
     size: "h-24 md:h-28",
     gridCols: "grid-cols-2 md:grid-cols-3",
     maxWidth: 140,
@@ -46,7 +46,7 @@ export function SponsorSection() {
 
   const renderSponsorGrid = (
     sponsorList: Sponsor[],
-    tier: "platinum" | "gold" | "silver"
+    tier: "platinum" | "gold" | "silver",
   ) => {
     const config = tierConfig[tier]
 
@@ -59,19 +59,24 @@ export function SponsorSection() {
           {sponsorList.map((sponsor) => (
             <div
               key={sponsor.id}
-              className={`flex ${config.size} items-center justify-center rounded-2xl border border-neutral-200 bg-gradient-to-br ${config.color} p-6 shadow-sm transition-all hover:scale-105 hover:shadow-md`}
               title={sponsor.fullName}
+              className={`relative overflow-hidden group rounded-2xl bg-gradient-to-br ${config.color} p-px shadow-sm transition-all hover:scale-105 hover:shadow-md`}
             >
-              <img
-                src={sponsor.logo}
-                alt={`${sponsor.fullName} logo`}
-                className="h-auto w-auto object-contain"
-                style={{
-                  maxWidth: `${config.maxWidth}px`,
-                  maxHeight: `${config.maxHeight}px`,
-                }}
-                loading="lazy"
-              />
+              <div
+                className={`flex ${config.size} items-center justify-center rounded-[15px] bg-black p-6`}
+              >
+                <img
+                  src={sponsor.logo}
+                  alt={`${sponsor.fullName} logo`}
+                  className="h-auto w-auto scale-150 object-contain"
+                  style={{
+                    maxWidth: `${config.maxWidth}px`,
+                    maxHeight: `${config.maxHeight}px`,
+                  }}
+                  loading="lazy"
+                />
+              </div>
+              <div className="absolute inset-0 -translate-x-full transform bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] transition-transform duration-1000 group-hover:translate-x-full"></div>
             </div>
           ))}
         </div>
@@ -80,7 +85,10 @@ export function SponsorSection() {
   }
 
   return (
-    <section id="sponsors" className="bg-gradient-to-b from-slate-50 to-white py-16">
+    <section
+      id="sponsors"
+      className="bg-gradient-to-b from-slate-50 to-white py-16"
+    >
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-12 text-center">
           <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-brand-red">
@@ -90,8 +98,8 @@ export function SponsorSection() {
             Our Sponsors
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-neutral-600">
-            We&apos;re grateful to our sponsors who make this conference possible
-            and support AI innovation in Africa.
+            We&apos;re grateful to our sponsors who make this conference
+            possible and support AI innovation in Africa.
           </p>
         </div>
 

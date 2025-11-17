@@ -70,6 +70,16 @@
       "category": "education",
       "tier": "silver",
       "description": "Higher education financing partner"
+    },
+    {
+      "id": "nxtgenai",
+      "name": "NxtGen Ai",
+      "fullName": "NxtGen Ai",
+      "logo": "/logos/NxtGenAi Logo.png",
+      "type": "sponsor",
+      "category": "technology",
+      "tier": "silver",
+      "description": "Technology solutions and services"
     }
   ],
   "logoCategories": {
