@@ -179,17 +179,9 @@
           "Premier Brandy",
           "Malawi Vodka"
         ],
-        "nonAlcoholic": [
-          "Coca-Cola",
-          "Fanta",
-          "Sprite"
-        ]
+        "nonAlcoholic": ["Coca-Cola", "Fanta", "Sprite"]
       },
-      "facilities": [
-        "Brewery",
-        "Distillery",
-        "5 Soft Drink Bottling Plants"
-      ],
+      "facilities": ["Brewery", "Distillery", "5 Soft Drink Bottling Plants"],
       "location": {
         "city": "Blantyre",
         "country": "Malawi"
