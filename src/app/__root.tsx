@@ -1,26 +1,33 @@
-import { createRootRoute, Outlet } from "@tanstack/react-router"
+import { createRootRoute, Outlet, useRouterState } from "@tanstack/react-router"
+import { useEffect } from "react"
+
+import { NotFoundPage } from "@/components/conference/NotFoundPage"
 
 import "unfonts.css"
 import "./globals.css"
 
 export const Route = createRootRoute({
   component: RootLayout,
-  notFoundComponent: () => {
-    return (
-      <p className="flex h-dvh w-full items-center justify-center bg-background text-foreground">
-        <div className="flex items-center space-x-3">
-          <h1 className="text-2xl">404</h1>
-          <span className="h-10 w-px bg-accent" />
-          <span className="text-sm">This page could not be found</span>
-        </div>
-      </p>
-    )
-  },
+  notFoundComponent: NotFoundPage,
 })
+
+function ScrollToTop() {
+  const router = useRouterState()
+
+  useEffect(() => {
+    // Only scroll to top if there's no hash in the URL
+    if (!router.location.hash) {
+      window.scrollTo(0, 0)
+    }
+  }, [router.location.pathname, router.location.hash])
+
+  return null
+}
 
 export default function RootLayout() {
   return (
     <div className="min-h-dvh w-full">
+      <ScrollToTop />
       <Outlet />
     </div>
   )

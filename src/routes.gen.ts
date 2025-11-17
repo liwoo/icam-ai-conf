@@ -16,6 +16,7 @@ import { Route as rootRoute } from "./app/__root"
 import { Route as BaseImport } from "./app/_base"
 import { Route as BaseIndexImport } from "./app/_base/index"
 import { Route as BaseProgrammeIndexImport } from "./app/_base/programme/index"
+import { Route as BaseSpeakersSpeakerIdImport } from "./app/_base/speakers/$speakerId"
 import { Route as BaseBlogPostsImport } from "./app/_base/blog/_posts"
 import { Route as BaseBlogPostsIndexImport } from "./app/_base/blog/_posts.index"
 import { Route as BaseBlogPostIdPostImport } from "./app/_base/blog/$postId/_post"
@@ -50,6 +51,11 @@ const BaseBlogPostIdRoute = BaseBlogPostIdImport.update({
 
 const BaseProgrammeIndexRoute = BaseProgrammeIndexImport.update({
   path: "/programme/",
+  getParentRoute: () => BaseRoute,
+} as any)
+
+const BaseSpeakersSpeakerIdRoute = BaseSpeakersSpeakerIdImport.update({
+  path: "/speakers/$speakerId",
   getParentRoute: () => BaseRoute,
 } as any)
 
@@ -105,6 +111,13 @@ declare module "@tanstack/react-router" {
       preLoaderRoute: typeof BaseBlogPostsImport
       parentRoute: typeof BaseBlogRoute
     }
+    "/_base/speakers/$speakerId": {
+      id: "/_base/speakers/$speakerId"
+      path: "/speakers/$speakerId"
+      fullPath: "/speakers/$speakerId"
+      preLoaderRoute: typeof BaseSpeakersSpeakerIdImport
+      parentRoute: typeof BaseImport
+    }
     "/_base/programme/": {
       id: "/_base/programme/"
       path: "/programme"
@@ -158,6 +171,7 @@ export const routeTree = rootRoute.addChildren({
         }),
       }),
     }),
+    BaseSpeakersSpeakerIdRoute,
     BaseProgrammeIndexRoute,
   }),
 })
@@ -178,6 +192,7 @@ export const routeTree = rootRoute.addChildren({
       "children": [
         "/_base/",
         "/_base/blog",
+        "/_base/speakers/$speakerId",
         "/_base/programme/"
       ]
     },
@@ -199,6 +214,10 @@ export const routeTree = rootRoute.addChildren({
       "children": [
         "/_base/blog/_posts/"
       ]
+    },
+    "/_base/speakers/$speakerId": {
+      "filePath": "_base/speakers/$speakerId.tsx",
+      "parent": "/_base"
     },
     "/_base/programme/": {
       "filePath": "_base/programme/index.tsx",

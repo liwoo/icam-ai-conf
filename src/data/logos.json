@@ -7,69 +7,287 @@
       "logo": "/logos/ICTAM Logo.png",
       "description": "ICT Association of Malawi - Host organization for the 2025 AGM and Innovation Awards",
       "website": "https://www.ictam.org.mw",
-      "category": "organizer"
+      "category": "organizer",
+      "about": "The ICT Association of Malawi (ICTAM) is an umbrella body of all ICT professionals in Malawi. Our mission is to offer ICT leadership by catalyzing policy changes and by supporting related developments aimed at enabling Malawians to participate effectively in the modern technology-based global economy, benefiting the Nation and its partners.",
+      "location": {
+        "address": "P.O. Box 31706, Filimoni House",
+        "city": "Lilongwe",
+        "country": "Malawi"
+      }
     }
   },
   "sponsorLogos": [
     {
       "id": "fcb",
       "name": "FCB",
-      "fullName": "First Capital Bank",
+      "fullName": "First Capital Bank Malawi",
       "logo": "/logos/FCB logo.png",
       "type": "sponsor",
       "category": "financial",
       "tier": "platinum",
-      "description": "Financial services partner"
+      "description": "Full-service commercial bank offering comprehensive financial products and services across Malawi",
+      "website": "https://www.firstcapitalbank.co.mw",
+      "about": "First Capital Bank Malawi is a full-service commercial bank offering financial products and services to the corporate, retail and personal markets. With its diverse product offering, First Capital Bank caters to the needs of all segments of the Malawi market and has one of the most extensive branches and agency distribution networks in the country.",
+      "parentCompany": "FMBCapital Holdings Plc",
+      "services": [
+        "Corporate Banking",
+        "Retail Banking",
+        "Personal Banking",
+        "Online Banking",
+        "Trade Finance Solutions",
+        "Cross Border Trade Services"
+      ],
+      "regionalPresence": "5 SADC countries",
+      "location": {
+        "headquarters": "Livingstone Towers, 21 Glyn Jones Road",
+        "city": "Blantyre",
+        "country": "Malawi"
+      },
+      "onlineBanking": "https://onlinefirstcapitalbank.fmbch.com/",
+      "socialMedia": {
+        "linkedin": "https://mw.linkedin.com/company/first-capital-bank-malawi"
+      }
     },
     {
       "id": "mtl",
       "name": "MTL",
-      "fullName": "MTL (Malawi Telecommunications Limited)",
+      "fullName": "Malawi Telecommunications Limited",
       "logo": "/logos/MTL Logo.png",
       "type": "sponsor",
       "category": "telecommunications",
       "tier": "platinum",
-      "description": "Telecommunications partner"
+      "description": "Leading telecommunications provider offering integrated voice and data solutions nationwide",
+      "website": "https://www.mtl.mw",
+      "tagline": "Everyone Everywhere",
+      "about": "Malawi Telecommunications Limited provides integrated high quality communication solutions for customers' greater experience. MTL has nationwide footprint on both Voice and Data services, offering dedicated solutions for residential and business customers.",
+      "services": [
+        "Fixed Wireline Voice & Data",
+        "Fixed Wireless Solutions",
+        "BusinessCONNECT VPN",
+        "Corporate Voice Services",
+        "Internet Services",
+        "Office 365 Hosting",
+        "Data Centre Solutions",
+        "24/7 Customer Support",
+        "Network Operations Centre"
+      ],
+      "businessSolutions": {
+        "vpn": "BusinessCONNECT - Dedicated Virtual Private Network (VPN) solution for secure data and voice transmission between branches",
+        "voice": "Corporate Voice with competitive call rates and per-second billing for SMEs and Corporates",
+        "internet": "High-value internet connectivity with 24/7 availability",
+        "hosting": "Office 365 email and suite hosting services"
+      },
+      "coverage": "Nationwide footprint across Malawi",
+      "support": "24/7 customer service and relationship management",
+      "parentCompany": "Press Corporation",
+      "socialMedia": {
+        "facebook": "https://www.facebook.com/malawitelecomms/",
+        "linkedin": "https://mw.linkedin.com/company/malawi-telecommunications-ltd"
+      }
     },
     {
       "id": "click-mobile",
       "name": "Click Mobile",
-      "fullName": "Click Mobile",
+      "fullName": "Click Mobile (Route Mobility)",
       "logo": "/logos/Click Mobile logo.png",
       "type": "sponsor",
       "category": "telecommunications",
       "tier": "gold",
-      "description": "Mobile telecommunications and technology services"
+      "description": "Pan-African telecommunications company specializing in messaging, USSD, voice, and enterprise solutions",
+      "website": "https://www.click-mobile.com",
+      "founded": 2012,
+      "founder": "Samuel Foster Chiwanda",
+      "about": "Click Mobile is a Malawi-based telecommunications company that focuses on Messaging, USSD, Voice, and Airtime. Founded in 2012, the company has grown to establish over 8 branches across Africa and the Middle East, offering Enterprise products that allow customers to consume telecommunication services.",
+      "services": [
+        "Messaging Services",
+        "USSD Solutions",
+        "Voice Services",
+        "Airtime Distribution",
+        "Data Services",
+        "System Development",
+        "Technical Support"
+      ],
+      "operationalBrand": "Route Mobility",
+      "branches": 13,
+      "regionalPresence": [
+        "Malawi",
+        "Kenya",
+        "Zimbabwe",
+        "Benin",
+        "Ghana",
+        "Zambia",
+        "Botswana",
+        "Mozambique",
+        "Senegal",
+        "Ivory Coast",
+        "United Arab Emirates"
+      ],
+      "awards": [
+        {
+          "year": 2023,
+          "award": "Best AFRICA Provider",
+          "organization": "Antonio Meucci Global Telco Awards"
+        },
+        {
+          "year": 2022,
+          "award": "Africa CXO Award of the Year",
+          "recipient": "Samuel Chiwanda"
+        },
+        {
+          "year": 2024,
+          "award": "Outstanding Performance Telco Team Honors Award",
+          "organization": "Meucci Awards"
+        },
+        {
+          "year": 2025,
+          "award": "TICON Company of the Year",
+          "location": "Ghana"
+        }
+      ],
+      "leadership": {
+        "ceo": "Samuel Foster Chiwanda",
+        "ceoBio": "Founder and CEO, 2022 CXO of the Year Award winner, ranked #7 in Rocco Awards, leading telco male professional 2024 at Antonio Meucci Awards"
+      },
+      "socialMedia": {
+        "linkedin": "https://mw.linkedin.com/company/click-mobile-sms-provider"
+      }
     },
     {
       "id": "castel",
       "name": "Castel",
-      "fullName": "Castel Malawi",
+      "fullName": "Castel Malawi Limited",
       "logo": "/logos/Castel Logo.png",
       "type": "sponsor",
       "category": "beverages",
       "tier": "gold",
-      "description": "Beverages and hospitality partner"
+      "description": "Leading beverage manufacturing company producing high-quality alcoholic and non-alcoholic drinks",
+      "website": "https://castelmalawi.com",
+      "about": "Castel Malawi Limited is the leading beverage manufacturing company dedicated to producing high-quality alcoholic drinks for the Malawian market. As a subsidiary of the globally recognised Castel Group, we bring decades of expertise in brewing, bottling, and distribution. For over 50 years, Castel Malawi has supplied the Malawi market with global brands.",
+      "founded": "1949 (Castel Group)",
+      "parentCompany": "Castel Group (French beverages company)",
+      "founder": "Pierre Castel",
+      "formerName": "Carlsberg Malawi Limited",
+      "yearsInMalawi": "50+ years",
+      "products": {
+        "alcoholic": [
+          "Castel Beer",
+          "Carlsberg (Special, Green, and Chill)",
+          "Doppel Munich",
+          "Kuche Kuche",
+          "Pomme Breeze",
+          "Malawi Gin",
+          "Premier Brandy",
+          "Malawi Vodka"
+        ],
+        "nonAlcoholic": [
+          "Coca-Cola",
+          "Fanta",
+          "Sprite"
+        ]
+      },
+      "facilities": [
+        "Brewery",
+        "Distillery",
+        "5 Soft Drink Bottling Plants"
+      ],
+      "location": {
+        "city": "Blantyre",
+        "country": "Malawi"
+      },
+      "socialMedia": {
+        "facebook": "https://www.facebook.com/CastelBeerMalawi/",
+        "linkedin": "https://mw.linkedin.com/company/carlsberg-malawi-brewery-ltd"
+      }
     },
     {
       "id": "oranux",
       "name": "Oranux",
-      "fullName": "Oranux Technologies",
+      "fullName": "Oranux Consulting Limited",
       "logo": "/logos/oranux logo.png",
       "type": "sponsor",
       "category": "technology",
       "tier": "silver",
-      "description": "Technology solutions and services"
+      "description": "Prominent Malawian ICT services and solutions provider specializing in IT infrastructure",
+      "website": "https://www.oranuxconsult.com",
+      "about": "Oranux Consulting Limited is a prominent Malawian based ICT Services and Solutions provider specializing in cost effective consulting services in the areas of IT infrastructure design, implementation and support.",
+      "services": [
+        "IT Infrastructure Design",
+        "IT Infrastructure Implementation",
+        "IT Infrastructure Support",
+        "IBM Systems Installation & Maintenance",
+        "VMware vSphere Solutions",
+        "Storage Area Network (SAN) Environments",
+        "Database Support Services",
+        "System Integration",
+        "Technical Consulting"
+      ],
+      "specializations": [
+        "IBM Systems",
+        "VMware vSphere",
+        "Storage Area Network (SAN)",
+        "Database Administration",
+        "Infrastructure Management"
+      ],
+      "experience": "15+ years in the IT industry",
+      "location": {
+        "address": "1st Floor, Dossani House, Room 12, 17 Glyn Jones Road",
+        "city": "Blantyre",
+        "country": "Malawi"
+      },
+      "leadership": {
+        "chiefTechnicalConsultant": "Joel Mlauzi",
+        "qualifications": "BSc in Computing and Information Systems (Upper Second-Class Honours) - London Metropolitan University"
+      },
+      "projectExperience": [
+        "Reserve Bank of Malawi ICT Hardware Procurement",
+        "Flexicube Upgrade Projects",
+        "Enterprise Infrastructure Implementation"
+      ],
+      "socialMedia": {
+        "facebook": "https://www.facebook.com/OranuxConsulting/"
+      }
     },
     {
       "id": "heslb",
-      "name": "HESLB",
-      "fullName": "Higher Education Students' Loans Board",
+      "name": "HESLGB",
+      "fullName": "Higher Education Students' Loans and Grants Board",
       "logo": "/logos/HESLB logo.png",
       "type": "sponsor",
       "category": "education",
       "tier": "silver",
-      "description": "Higher education financing partner"
+      "description": "Government board financing access to higher education for needy and deserving students in Malawi",
+      "website": "https://www.heslgb.mw",
+      "established": "2015",
+      "establishedBy": "Parliamentary Act No. 2 of 2015",
+      "about": "HESLGB was established to sustainably provide accessible and affordable loans and grants to deserving students pursuing higher education in Malawi. The Board disburses loans yearly to needy and deserving students pursuing higher education in government registered higher learning institutions.",
+      "mission": "To sustainably provide accessible and affordable loans and grants to deserving students pursuing higher education in Malawi",
+      "mandate": [
+        "Disburse loans to needy and deserving students",
+        "Support students in NCHE registered institutions",
+        "Finance accredited programs and courses",
+        "Recover loans from former beneficiaries",
+        "Manage historical loans dating back to 1985/86"
+      ],
+      "services": [
+        "Student Loans",
+        "Student Grants",
+        "Financial Aid Assessment",
+        "Loan Recovery Services",
+        "Student Financing Management"
+      ],
+      "eligibility": "Needy and deserving students in government registered higher learning institutions (by National Council for Higher Education - NCHE)",
+      "institutionTypes": [
+        "Public Universities",
+        "Private Universities",
+        "Accredited Higher Learning Institutions"
+      ],
+      "historicalContext": "Manages loan scheme dating back to 1985/86 academic calendar",
+      "studentPortal": "https://sfmis.heslgb.mw/",
+      "portalName": "Students Financing Management Information System (SFMIS)",
+      "socialMedia": {
+        "facebook": "https://www.facebook.com/HESLGBOFFICIALPAGE/",
+        "linkedin": "https://mw.linkedin.com/company/higher-education-students-loans-and-grants-board-heslgb"
+      }
     }
   ],
   "logoCategories": {
@@ -131,5 +349,10 @@
     "note": "If SVG or other formats are needed, they should be added to the public/logos/ directory",
     "preferredFormats": ["svg", "png"],
     "minimumResolution": "300dpi for print materials"
+  },
+  "dataReferences": {
+    "socialMediaIcons": "See src/data/links.json for social media platform icons and colors",
+    "contactInfo": "See src/data/links.json for contact type icons",
+    "note": "Always use X instead of Twitter for up-to-date branding"
   }
 }

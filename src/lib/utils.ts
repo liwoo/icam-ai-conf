@@ -57,3 +57,30 @@ export function createDedupeFn<
     return promise as R
   }
 }
+
+/**
+ * Generate a URL-friendly slug from a speaker name
+ * @param name - The speaker's full name
+ * @returns A slugified version of the name
+ */
+export function generateSpeakerSlug(name: string): string {
+  return name
+    .toLowerCase()
+    .replace(/[^\w\s-]/g, "") // Remove special characters
+    .replace(/\s+/g, "-") // Replace spaces with hyphens
+    .replace(/-+/g, "-") // Replace multiple hyphens with single hyphen
+    .trim()
+}
+
+/**
+ * Find a speaker by their slug
+ * @param speakers - Array of speaker objects
+ * @param slug - The URL slug to search for
+ * @returns The matching speaker or undefined
+ */
+export function findSpeakerBySlug<T extends { name: string }>(
+  speakers: T[],
+  slug: string,
+): T | undefined {
+  return speakers.find((speaker) => generateSpeakerSlug(speaker.name) === slug)
+}

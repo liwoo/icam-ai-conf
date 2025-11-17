@@ -1,0 +1,203 @@
+{
+  "socialMediaPlatforms": {
+    "x": {
+      "name": "X",
+      "formerName": "Twitter",
+      "baseUrl": "https://x.com/",
+      "icon": "X",
+      "iconLibrary": "lucide-react",
+      "color": "#000000",
+      "displayName": "X (Twitter)",
+      "usernamePrefix": "@"
+    },
+    "facebook": {
+      "name": "Facebook",
+      "baseUrl": "https://facebook.com/",
+      "icon": "Facebook",
+      "iconLibrary": "lucide-react",
+      "color": "#1877F2",
+      "displayName": "Facebook",
+      "usernamePrefix": "@"
+    },
+    "instagram": {
+      "name": "Instagram",
+      "baseUrl": "https://instagram.com/",
+      "icon": "Instagram",
+      "iconLibrary": "lucide-react",
+      "color": "#E4405F",
+      "displayName": "Instagram",
+      "usernamePrefix": "@"
+    },
+    "linkedin": {
+      "name": "LinkedIn",
+      "baseUrl": "https://linkedin.com/",
+      "icon": "Linkedin",
+      "iconLibrary": "lucide-react",
+      "color": "#0A66C2",
+      "displayName": "LinkedIn",
+      "usernamePrefix": ""
+    },
+    "youtube": {
+      "name": "YouTube",
+      "baseUrl": "https://youtube.com/",
+      "icon": "Youtube",
+      "iconLibrary": "lucide-react",
+      "color": "#FF0000",
+      "displayName": "YouTube",
+      "usernamePrefix": "@"
+    },
+    "tiktok": {
+      "name": "TikTok",
+      "baseUrl": "https://tiktok.com/",
+      "icon": "Music",
+      "iconLibrary": "lucide-react",
+      "color": "#000000",
+      "displayName": "TikTok",
+      "usernamePrefix": "@",
+      "note": "TikTok icon not available in Lucide, using Music as placeholder"
+    },
+    "whatsapp": {
+      "name": "WhatsApp",
+      "baseUrl": "https://wa.me/",
+      "icon": "MessageCircle",
+      "iconLibrary": "lucide-react",
+      "color": "#25D366",
+      "displayName": "WhatsApp",
+      "usernamePrefix": "+",
+      "note": "Use phone number format without spaces"
+    },
+    "telegram": {
+      "name": "Telegram",
+      "baseUrl": "https://t.me/",
+      "icon": "Send",
+      "iconLibrary": "lucide-react",
+      "color": "#0088CC",
+      "displayName": "Telegram",
+      "usernamePrefix": "@"
+    },
+    "github": {
+      "name": "GitHub",
+      "baseUrl": "https://github.com/",
+      "icon": "Github",
+      "iconLibrary": "lucide-react",
+      "color": "#181717",
+      "displayName": "GitHub",
+      "usernamePrefix": "@"
+    },
+    "threads": {
+      "name": "Threads",
+      "baseUrl": "https://threads.net/",
+      "icon": "AtSign",
+      "iconLibrary": "lucide-react",
+      "color": "#000000",
+      "displayName": "Threads",
+      "usernamePrefix": "@",
+      "note": "Threads icon not available in Lucide, using AtSign as placeholder"
+    }
+  },
+  "contactTypes": {
+    "email": {
+      "name": "Email",
+      "protocol": "mailto:",
+      "icon": "Mail",
+      "iconLibrary": "lucide-react",
+      "color": "#EA4335",
+      "displayName": "Email"
+    },
+    "phone": {
+      "name": "Phone",
+      "protocol": "tel:",
+      "icon": "Phone",
+      "iconLibrary": "lucide-react",
+      "color": "#34A853",
+      "displayName": "Phone"
+    },
+    "website": {
+      "name": "Website",
+      "protocol": "https://",
+      "icon": "Globe",
+      "iconLibrary": "lucide-react",
+      "color": "#4285F4",
+      "displayName": "Website"
+    },
+    "location": {
+      "name": "Location",
+      "protocol": "https://maps.google.com/?q=",
+      "icon": "MapPin",
+      "iconLibrary": "lucide-react",
+      "color": "#FBBC04",
+      "displayName": "Location"
+    }
+  },
+  "ictamSocialMedia": {
+    "website": "https://www.ictam.org.mw",
+    "email": "info@ictam.org.mw",
+    "facebook": "https://www.facebook.com/ictammalawi",
+    "x": "https://x.com/ictammalawi",
+    "linkedin": "https://www.linkedin.com/company/ict-association-of-malawi",
+    "phone": "+265 xxx xxx xxx",
+    "address": "P.O. Box 31706, Filimoni House, City Center, Lilongwe 3, Malawi"
+  },
+  "conferenceLinks": {
+    "registration": {
+      "title": "Event Registration",
+      "url": "/register",
+      "external": false,
+      "icon": "UserPlus"
+    },
+    "programme": {
+      "title": "Event Programme",
+      "url": "/programme",
+      "external": false,
+      "icon": "Calendar"
+    },
+    "speakers": {
+      "title": "Speakers",
+      "url": "/#speakers",
+      "external": false,
+      "icon": "Users"
+    },
+    "sponsors": {
+      "title": "Sponsors",
+      "url": "/#sponsors",
+      "external": false,
+      "icon": "Award"
+    },
+    "venue": {
+      "title": "Venue",
+      "url": "https://maps.google.com/?q=Sunbird+Nkopola+Lodge+Mangochi+Malawi",
+      "external": true,
+      "icon": "MapPin",
+      "details": {
+        "name": "Sunbird Nkopola Lodge",
+        "location": "Mangochi, Malawi",
+        "address": "Sunbird Nkopola Lodge, Mangochi"
+      }
+    },
+    "accommodation": {
+      "title": "Accommodation",
+      "url": "https://www.sunbirdmalawi.com/sunbird-nkopola",
+      "external": true,
+      "icon": "Hotel"
+    }
+  },
+  "externalResources": {
+    "nationalBank": {
+      "name": "National Bank of Malawi",
+      "url": "https://www.natbankmw.com",
+      "description": "Innovation Awards Sponsor"
+    },
+    "undp": {
+      "name": "United Nations Development Programme",
+      "url": "https://www.undp.org",
+      "description": "Innovation Awards Sponsor"
+    }
+  },
+  "usageNotes": {
+    "iconLibrary": "This project uses lucide-react for icons. Import icons from 'lucide-react'.",
+    "socialMediaUpdates": "Always use 'X' instead of 'Twitter'. The platform rebranded in 2023.",
+    "colorUsage": "Colors provided are official brand colors. Use them for consistency.",
+    "exampleImport": "import { Facebook, Linkedin, X, Mail } from 'lucide-react'",
+    "updatingLinks": "To update social media links, modify this file. All components should reference this data source."
+  }
+}
