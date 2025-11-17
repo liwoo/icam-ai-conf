@@ -17,7 +17,7 @@ function ScrollToTop() {
   useEffect(() => {
     // Only scroll to top if there's no hash in the URL
     if (!router.location.hash) {
-      window.scrollTo(0, 0)
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
     }
   }, [router.location.pathname, router.location.hash])
 

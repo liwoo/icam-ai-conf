@@ -20,6 +20,47 @@ export function HeroSection() {
         {/* Black-to-Red Gradient Overlay - High opacity left (black) to low opacity right (red) */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/60 to-brand-red/20" />
 
+        {/* Decorative ICTAM Icon Motif - Large branded watermark */}
+        <div className="absolute inset-y-0 -left-96 flex items-center lg:-left-[500px]">
+          <div className="relative h-[1400px] w-[1400px] animate-subtle-pulse lg:h-[1600px] lg:w-[1600px]">
+            <img
+              src="/logos/brand/ictam-icon.svg"
+              alt=""
+              className="h-full w-full opacity-15 mix-blend-overlay"
+              style={{
+                filter: "brightness(0) saturate(100%) invert(35%) sepia(78%) saturate(2476%) hue-rotate(338deg) brightness(91%) contrast(92%)",
+              }}
+              aria-hidden="true"
+            />
+            {/* Secondary icon with gradient effect for depth */}
+            <img
+              src="/logos/brand/ictam-icon.svg"
+              alt=""
+              className="absolute inset-0 h-full w-full opacity-10 mix-blend-screen"
+              style={{
+                filter: "brightness(0) saturate(100%) invert(18%) sepia(89%) saturate(4215%) hue-rotate(348deg) brightness(89%) contrast(102%)",
+              }}
+              aria-hidden="true"
+            />
+          </div>
+        </div>
+
+        {/* Custom animation styles */}
+        <style>{`
+          @keyframes subtle-pulse {
+            0%, 100% {
+              transform: scale(1);
+            }
+            50% {
+              transform: scale(1.05);
+            }
+          }
+
+          .animate-subtle-pulse {
+            animation: subtle-pulse 8s ease-in-out infinite;
+          }
+        `}</style>
+
         {/* Content */}
         <div className="absolute inset-0 flex items-center">
           <div className="mx-auto w-full max-w-7xl px-6">

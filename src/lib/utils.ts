@@ -84,3 +84,16 @@ export function findSpeakerBySlug<T extends { name: string }>(
 ): T | undefined {
   return speakers.find((speaker) => generateSpeakerSlug(speaker.name) === slug)
 }
+
+/**
+ * Find a sponsor by their ID
+ * @param sponsors - Array of sponsor objects
+ * @param id - The sponsor ID to search for
+ * @returns The matching sponsor or undefined
+ */
+export function findSponsorById<T extends { id: string }>(
+  sponsors: T[],
+  id: string,
+): T | undefined {
+  return sponsors.find((sponsor) => sponsor.id === id)
+}

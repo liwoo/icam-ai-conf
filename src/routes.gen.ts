@@ -16,6 +16,7 @@ import { Route as rootRoute } from "./app/__root"
 import { Route as BaseImport } from "./app/_base"
 import { Route as BaseIndexImport } from "./app/_base/index"
 import { Route as BaseProgrammeIndexImport } from "./app/_base/programme/index"
+import { Route as BaseSponsorsSponsorIdImport } from "./app/_base/sponsors/$sponsorId"
 import { Route as BaseSpeakersSpeakerIdImport } from "./app/_base/speakers/$speakerId"
 import { Route as BaseBlogPostsImport } from "./app/_base/blog/_posts"
 import { Route as BaseBlogPostsIndexImport } from "./app/_base/blog/_posts.index"
@@ -51,6 +52,11 @@ const BaseBlogPostIdRoute = BaseBlogPostIdImport.update({
 
 const BaseProgrammeIndexRoute = BaseProgrammeIndexImport.update({
   path: "/programme/",
+  getParentRoute: () => BaseRoute,
+} as any)
+
+const BaseSponsorsSponsorIdRoute = BaseSponsorsSponsorIdImport.update({
+  path: "/sponsors/$sponsorId",
   getParentRoute: () => BaseRoute,
 } as any)
 
@@ -118,6 +124,13 @@ declare module "@tanstack/react-router" {
       preLoaderRoute: typeof BaseSpeakersSpeakerIdImport
       parentRoute: typeof BaseImport
     }
+    "/_base/sponsors/$sponsorId": {
+      id: "/_base/sponsors/$sponsorId"
+      path: "/sponsors/$sponsorId"
+      fullPath: "/sponsors/$sponsorId"
+      preLoaderRoute: typeof BaseSponsorsSponsorIdImport
+      parentRoute: typeof BaseImport
+    }
     "/_base/programme/": {
       id: "/_base/programme/"
       path: "/programme"
@@ -172,6 +185,7 @@ export const routeTree = rootRoute.addChildren({
       }),
     }),
     BaseSpeakersSpeakerIdRoute,
+    BaseSponsorsSponsorIdRoute,
     BaseProgrammeIndexRoute,
   }),
 })
@@ -193,6 +207,7 @@ export const routeTree = rootRoute.addChildren({
         "/_base/",
         "/_base/blog",
         "/_base/speakers/$speakerId",
+        "/_base/sponsors/$sponsorId",
         "/_base/programme/"
       ]
     },
@@ -217,6 +232,10 @@ export const routeTree = rootRoute.addChildren({
     },
     "/_base/speakers/$speakerId": {
       "filePath": "_base/speakers/$speakerId.tsx",
+      "parent": "/_base"
+    },
+    "/_base/sponsors/$sponsorId": {
+      "filePath": "_base/sponsors/$sponsorId.tsx",
       "parent": "/_base"
     },
     "/_base/programme/": {

@@ -1,3 +1,5 @@
+import { Link } from "@tanstack/react-router"
+
 import sponsorData from "@/data/logos.json"
 
 interface Sponsor {
@@ -57,13 +59,15 @@ export function SponsorSection() {
         </h3>
         <div className={`grid gap-6 ${config.gridCols}`}>
           {sponsorList.map((sponsor) => (
-            <div
+            <Link
               key={sponsor.id}
+              to="/sponsors/$sponsorId"
+              params={{ sponsorId: sponsor.id }}
               title={sponsor.fullName}
               className={`relative overflow-hidden group rounded-2xl bg-gradient-to-br ${config.color} p-px shadow-sm transition-all hover:scale-105 hover:shadow-md`}
             >
               <div
-                className={`flex ${config.size} items-center justify-center rounded-[15px] bg-black p-6`}
+                className={`flex ${config.size} items-center justify-center rounded-[15px] bg-gradient-to-br from-red-950 to-black p-6`}
               >
                 <img
                   src={sponsor.logo}
@@ -77,7 +81,7 @@ export function SponsorSection() {
                 />
               </div>
               <div className="absolute inset-0 -translate-x-full transform bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] transition-transform duration-1000 group-hover:translate-x-full"></div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

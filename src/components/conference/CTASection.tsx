@@ -63,6 +63,8 @@ const stats: Stat[] = [
   },
 ]
 
+import { Link } from "@tanstack/react-router"
+
 export function CTASection() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-brand-black via-brand-dark-red to-brand-red-dark py-20">
@@ -122,8 +124,8 @@ export function CTASection() {
               />
             </svg>
           </a>
-          <a
-            href="#agenda"
+          <Link
+            to="/programme"
             className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/30 bg-white/10 px-8 py-4 text-lg font-bold uppercase tracking-tight text-white backdrop-blur-sm transition-all hover:border-white/50 hover:bg-white/20"
           >
             View Agenda
@@ -146,7 +148,7 @@ export function CTASection() {
                 d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
               />
             </svg>
-          </a>
+          </Link>
         </div>
 
         {/* Additional Info */}
