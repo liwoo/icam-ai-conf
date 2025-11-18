@@ -280,6 +280,75 @@
         "facebook": "https://www.facebook.com/HESLGBOFFICIALPAGE/",
         "linkedin": "https://mw.linkedin.com/company/higher-education-students-loans-and-grants-board-heslgb"
       }
+    },
+    {
+      "id": "nxtgen",
+      "name": "NxtGen AI",
+      "fullName": "NxtGen AI",
+      "logo": "/logos/NxtGenAi Logo.png",
+      "type": "sponsor",
+      "category": "technology",
+      "tier": "silver",
+      "description": "African AI lab specializing in practical, ROI-driven artificial intelligence solutions for businesses and governments across the continent, with proven deployments in Malawi, Rwanda, and beyond",
+      "website": "https://nxtgenlabs.ai",
+      "established": "2021",
+      "establishedBy": "Eugene Maseya",
+      "about": "NxtGen AI is an African AI lab that combines world-class AI expertise with deep understanding of African business realities. We specialize in building custom AI solutions that deliver measurable business value, from automated customer service to predictive analytics and computer vision systems. With proven success in warehouse automation in Malawi and government digital services in Rwanda serving 120,000 citizens, we're transforming how African businesses operate.",
+      "mission": "To transform African business through intelligent automation by delivering measurable business value through practical, ROI-driven AI solutions that help organizations cut costs, scale efficiently, and compete in the digital economy",
+      "mandate": [
+        "Deploy AI solutions that cut operational costs by 40-60%",
+        "Enable businesses to scale without growing payroll",
+        "Democratize data access through natural language AI",
+        "Build Africa-first solutions for local contexts",
+        "Provide end-to-end AI transformation support"
+      ],
+      "services": [
+        "Custom AI Agents & Chatbots",
+        "Predictive Machine Learning Models",
+        "Computer Vision & Warehouse Automation",
+        "Natural Language Data Intelligence",
+        "AI-Powered Credit Decisioning",
+        "Fraud Detection Systems",
+        "Insurance Claim Automation",
+        "Data Engineering & Infrastructure"
+      ],
+      "programs": [
+        "AI Discovery & Strategy Consulting",
+        "Proof of Concept Development",
+        "Full AI Deployment & Integration",
+        "Continuous AI Optimization",
+        "Executive Intelligence Dashboards",
+        "Multilingual Customer Service Platforms"
+      ],
+      "partners": [
+        "Rwanda Government Digital Services",
+        "Malawi Warehouse & Commodity Sector",
+        "Financial Services Institutions",
+        "Manufacturing & FMCG Companies",
+        "Agricultural & Commodity Trading Firms",
+        "Retail & Distribution Organizations"
+      ],
+      "achievements": [
+        "Government platform in Rwanda serving 300+ services to 120,000 citizens",
+        "Warehouse tracking system deployed in Malawi eliminating manual counting errors",
+        "AI customer service handling thousands of inquiries automatically",
+        "Computer vision system for 50kg commodity bag tracking",
+        "Natural language business intelligence systems for executives",
+        "Quest HR: AI-powered performance management platform",
+        "Bible Fit: AI-enhanced iOS Bible app"
+      ],
+      "location": "Next to Automotive Products Limited, Along M12, Near Gateway Mall Roundabout, Lilongwe",
+      "contact": {
+        "phone": "+265 981 34 00 88",
+        "email": "info@nxtgenlabs.mw"
+      },
+      "socialMedia": {
+        "facebook": "https://www.facebook.com/NxtGenLabs/",
+        "linkedin": "https://mw.linkedin.com/company/nxtgenlabs",
+        "instagram": "https://www.instagram.com/nxtgenlabs_mw/",
+        "twitter": "https://x.com/nxtgenlabs_mw",
+        "github": "https://github.com/NxtGenLabs"
+      }
     }
   ],
   "logoCategories": {
@@ -301,7 +370,7 @@
     "silver": {
       "title": "Silver Sponsors",
       "description": "Supporting partners contributing to the success of the event",
-      "logos": ["oranux", "heslb"]
+      "logos": ["oranux", "heslb", "nxtgen"]
     }
   },
   "displaySettings": {

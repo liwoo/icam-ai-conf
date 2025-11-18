@@ -1,8 +1,8 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router"
 import { z } from "zod"
 
-import { Badge } from "@/components/ui/badge"
 import { Seo } from "@/components/layout/seo"
+import { Badge } from "@/components/ui/badge"
 import sponsorData from "@/data/logos.json"
 
 interface Sponsor {
@@ -45,8 +45,7 @@ const tierConfig = {
 
 export const Route = createFileRoute("/_base/sponsors/$sponsorId")({
   component: SponsorDetailPage,
-  parseParams: (params) =>
-    z.object({ sponsorId: z.string() }).parse(params),
+  parseParams: (params) => z.object({ sponsorId: z.string() }).parse(params),
   beforeLoad: ({ params }) => {
     const sponsor = sponsors.find((s) => s.id === params.sponsorId)
     if (!sponsor) {
@@ -151,38 +150,42 @@ function SponsorDetailPage() {
           )}
 
           {/* Category Badge */}
-          <div className="mb-12 flex flex-wrap items-center gap-4">
-            <div className="rounded-full bg-gradient-to-r from-brand-red/10 to-brand-red/5 px-6 py-3">
+          <div className="align-item-center mb-12 flex flex-wrap">
+            <div className="flex flex-col">
               <span className="text-sm font-semibold uppercase tracking-wide text-brand-red">
                 Category
               </span>
-              <p className="mt-1 text-lg font-bold capitalize text-brand-black">
-                {sponsor.category}
-              </p>
+              <div className="align-items-center flex flex-row gap-4">
+                <div className="w-auto min-w-fit rounded-full bg-gradient-to-r from-brand-red/10 to-brand-red/5 px-6 py-3">
+                  <p className="mt-1 text-lg font-bold capitalize text-brand-black">
+                    {sponsor.category}
+                  </p>
+                </div>
+                {sponsor.website && (
+                  <a
+                    href={sponsor.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full border-2 border-brand-red/20 bg-white px-6 py-3 text-sm font-bold text-brand-red transition-all hover:border-brand-red hover:bg-brand-red hover:text-white hover:shadow-lg"
+                  >
+                    Visit Website
+                    <svg
+                      className="h-4 w-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
+                    </svg>
+                  </a>
+                )}
+              </div>
             </div>
-            {sponsor.website && (
-              <a
-                href={sponsor.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border-2 border-brand-red/20 bg-white px-6 py-3 text-sm font-bold text-brand-red transition-all hover:border-brand-red hover:bg-brand-red hover:text-white hover:shadow-lg"
-              >
-                Visit Website
-                <svg
-                  className="h-4 w-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                  />
-                </svg>
-              </a>
-            )}
           </div>
 
           {/* Services Section */}
