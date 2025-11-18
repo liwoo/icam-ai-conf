@@ -57,7 +57,7 @@ const agendaDays: AgendaDay[] = [
 
 export function AgendaSection() {
   return (
-    <section id="agenda" className="relative bg-white">
+    <section id="agenda" className="relative overflow-hidden bg-white">
       {/* Subtle purple-to-red gradient background */}
       <GradientBlur
         variant="purple-subtle"
@@ -105,7 +105,7 @@ export function AgendaSection() {
               key={agenda.day}
               variant={agenda.variant === "dark" ? "dark" : "default"}
               padding="xl"
-              className="relative"
+              className="relative overflow-hidden"
             >
               <GradientBlur
                 variant={agenda.variant === "dark" ? "dark-red" : "purple-subtle"}

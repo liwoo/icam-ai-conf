@@ -3,6 +3,7 @@ import { createFileRoute } from "@tanstack/react-router"
 import { AgendaSection } from "@/components/conference/AgendaSection"
 import { ContactSection } from "@/components/conference/ContactSection"
 import { CTASection } from "@/components/conference/CTASection"
+import { HeadlinerSection } from "@/components/conference/HeadlinerSection"
 import { HeroSection } from "@/components/conference/HeroSection"
 import { SpeakersSection } from "@/components/conference/SpeakersSection"
 import { SponsorSection } from "@/components/conference/SponsorSection"
@@ -21,6 +22,7 @@ function HomePage() {
       />
 
       <HeroSection />
+      <HeadlinerSection />
       <SpeakersSection />
       <SponsorSection />
       <CTASection />

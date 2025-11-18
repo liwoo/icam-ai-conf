@@ -20,7 +20,7 @@ const conferenceBadgeVariants = cva(
         xs: "px-2 py-1 text-[10px] rounded",
         sm: "px-3 py-1.5 text-[11px] rounded-lg",
         md: "px-4 py-2 text-xs rounded-full",
-        lg: "px-5 py-2.5 text-sm rounded-full",
+        lg: "px-6 py-1.5 text-xs rounded-full",
       },
       hover: {
         true: "hover:scale-105 cursor-pointer",

@@ -18,9 +18,13 @@ interface Speaker {
 
 interface SpeakerCardProps {
   speaker: Speaker
+  isMobile?: boolean
 }
 
-export function SpeakerCard({ speaker }: SpeakerCardProps) {
+export function SpeakerCard({ speaker, isMobile = false }: SpeakerCardProps) {
+  const imageSize = isMobile ? "h-40 w-40" : "h-64 w-64"
+  const borderWidth = isMobile ? "border-4" : "border-[6px]"
+
   return (
     <Link
       to="/speakers/$speakerId"
@@ -32,7 +36,7 @@ export function SpeakerCard({ speaker }: SpeakerCardProps) {
         <div className="absolute inset-0 rounded-full bg-gradient-to-br from-brand-red via-brand-red-dark to-brand-dark-red p-2">
           <div className="h-full w-full rounded-full bg-white"></div>
         </div>
-        <div className="relative h-64 w-64 overflow-hidden rounded-full border-[6px] border-brand-red shadow-2xl shadow-brand-red/20">
+        <div className={`relative ${imageSize} overflow-hidden rounded-full ${borderWidth} border-brand-red shadow-2xl shadow-brand-red/20`}>
           <img
             src={speaker.image}
             alt={`${speaker.name} portrait`}
@@ -46,10 +50,12 @@ export function SpeakerCard({ speaker }: SpeakerCardProps) {
         {speaker.name}
       </h3>
 
-      {/* Speaker Title in Badge */}
-      <Badge className="mb-4 bg-gradient-to-r from-brand-red to-brand-red-dark px-4 py-1.5 text-center text-xs font-medium text-white hover:from-brand-red-dark hover:to-brand-dark-red">
-        {speaker.title}
-      </Badge>
+      {/* Speaker Title in Badge - Hidden on mobile */}
+      {!isMobile && (
+        <Badge className="mb-4 bg-gradient-to-r from-brand-red to-brand-red-dark px-4 py-1.5 text-center text-xs font-medium text-white hover:from-brand-red-dark hover:to-brand-dark-red">
+          {speaker.title}
+        </Badge>
+      )}
 
       {/* Topic with Quotation Mark Background */}
       <div className="relative mb-6 w-full px-8">

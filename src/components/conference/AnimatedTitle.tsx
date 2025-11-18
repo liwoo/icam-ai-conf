@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect, useMemo } from "react"
+import { useRef, useState, useEffect, useMemo, useCallback } from "react"
 
 interface TextSegment {
   text: string
@@ -55,53 +55,59 @@ export function AnimatedTitle({ text, className = "" }: AnimatedTitleProps) {
     }
   }, [characters])
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
     if (!containerRef.current) return
 
     const containerRect = containerRef.current.getBoundingClientRect()
     const mouseX = e.clientX - containerRect.left
     const mouseY = e.clientY - containerRect.top
 
-    // Update 3D cursor position
+    // Update 3D cursor position with requestAnimationFrame for smooth animation
     if (cursorRef.current) {
-      cursorRef.current.style.left = `${mouseX}px`
-      cursorRef.current.style.top = `${mouseY}px`
+      requestAnimationFrame(() => {
+        if (cursorRef.current) {
+          cursorRef.current.style.left = `${mouseX}px`
+          cursorRef.current.style.top = `${mouseY}px`
+        }
+      })
     }
 
     const letters = containerRef.current.querySelectorAll<HTMLSpanElement>(".letter")
 
-    letters.forEach((letter, index) => {
-      const pos = letterPositions[index]
-      if (!pos) return
+    requestAnimationFrame(() => {
+      letters.forEach((letter, index) => {
+        const pos = letterPositions[index]
+        if (!pos) return
 
-      // Calculate distance from mouse to letter center
-      const letterCenterX = pos.x + pos.width / 2
-      const letterCenterY = pos.y + pos.height / 2
-      const distanceX = mouseX - letterCenterX
-      const distanceY = mouseY - letterCenterY
-      const distance = Math.sqrt(distanceX ** 2 + distanceY ** 2)
+        // Calculate distance from mouse to letter center
+        const letterCenterX = pos.x + pos.width / 2
+        const letterCenterY = pos.y + pos.height / 2
+        const distanceX = mouseX - letterCenterX
+        const distanceY = mouseY - letterCenterY
+        const distance = Math.sqrt(distanceX ** 2 + distanceY ** 2)
 
-      // Apply transformations based on proximity
-      const maxDistance = 200 // pixels
-      const proximity = Math.max(0, 1 - distance / maxDistance)
+        // Apply transformations based on proximity
+        const maxDistance = 200 // pixels
+        const proximity = Math.max(0, 1 - distance / maxDistance)
 
-      if (proximity > 0.3) {
-        // Switch to stroke-only on hover
-        letter.style.webkitTextStroke = "2px white"
-        letter.style.color = "transparent"
-        letter.style.textShadow = `
-          0 0 ${proximity * 30}px rgba(236, 72, 153, ${proximity * 0.8}),
-          0 0 ${proximity * 50}px rgba(236, 72, 153, ${proximity * 0.4})
-        `
-      } else {
-        // Reset to original color
-        const originalColor = letter.getAttribute("data-color")
-        letter.style.webkitTextStroke = ""
-        letter.style.color = originalColor || ""
-        letter.style.textShadow = ""
-      }
+        if (proximity > 0.3) {
+          // Switch to stroke-only on hover
+          letter.style.webkitTextStroke = "2px white"
+          letter.style.color = "transparent"
+          letter.style.textShadow = `
+            0 0 ${proximity * 30}px rgba(236, 72, 153, ${proximity * 0.8}),
+            0 0 ${proximity * 50}px rgba(236, 72, 153, ${proximity * 0.4})
+          `
+        } else {
+          // Reset to original color
+          const originalColor = letter.getAttribute("data-color")
+          letter.style.webkitTextStroke = ""
+          letter.style.color = originalColor || ""
+          letter.style.textShadow = ""
+        }
+      })
     })
-  }
+  }, [letterPositions])
 
   const handleMouseEnter = () => {
     setIsHovering(true)
@@ -141,6 +147,7 @@ export function AnimatedTitle({ text, className = "" }: AnimatedTitleProps) {
             transformStyle: "preserve-3d",
             transformOrigin: "center",
             color: item.color,
+            willChange: "transform, color, text-shadow",
           }}
         >
           {item.char === " " ? "\u00A0" : item.char}
