@@ -7,17 +7,26 @@ import { TransparentCard } from "@/components/ui/transparent-card"
 
 export function VenueSection() {
   return (
-    <section id="venue" className="bg-neutral-100">
-      <div className="mx-auto max-w-6xl px-4 py-12 sm:py-16">
+    <section id="venue" className="relative overflow-hidden">
+      {/* Lake Malawi background image */}
+      <div className="absolute inset-0">
+        <img
+          src="/images/lake-malawi.jpg"
+          alt="Lake Malawi"
+          className="h-full w-full object-cover"
+        />
+      </div>
+
+      <div className="relative mx-auto max-w-6xl px-4 py-12 sm:py-16">
         <div className="grid gap-8 lg:grid-cols-[1.1fr,0.9fr] lg:items-center">
           <div>
             <ConferenceBadge variant="outline-red" size="xs">
               Venue &amp; Travel
             </ConferenceBadge>
-            <PageTitle size="md" className="mt-2">
+            <PageTitle size="md" className="mt-2 text-white">
               Sunbird Nkopola Lodge
             </PageTitle>
-            <Subtitle size="md" className="mt-2 max-w-md">
+            <Subtitle size="md" className="mt-2 max-w-md text-white/80">
               Lakeside resort. Modern facilities. Mangochi.
             </Subtitle>
             <div className="mt-5 grid gap-3 sm:grid-cols-3">
@@ -39,10 +48,10 @@ export function VenueSection() {
                     </svg>
                   </IconContainer>
                   <div>
-                    <p className="text-[13px] font-semibold tracking-tight text-brand-black">
+                    <p className="text-[13px] font-semibold tracking-tight text-white">
                       Scenic Location
                     </p>
-                    <Subtitle size="sm" weight="normal" className="mt-1">
+                    <Subtitle size="sm" weight="normal" className="mt-1 text-white/70">
                       On Lake Malawi shores.
                     </Subtitle>
                   </div>

@@ -1,12 +1,14 @@
 interface Stat {
-  value: string
+  value: number
+  suffix: string
   label: string
   icon: React.ReactNode
 }
 
 const stats: Stat[] = [
   {
-    value: "500+",
+    value: 500,
+    suffix: "+",
     label: "Attendees",
     icon: (
       <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -20,7 +22,8 @@ const stats: Stat[] = [
     ),
   },
   {
-    value: "50+",
+    value: 50,
+    suffix: "+",
     label: "Expert Speakers",
     icon: (
       <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -34,7 +37,8 @@ const stats: Stat[] = [
     ),
   },
   {
-    value: "30+",
+    value: 30,
+    suffix: "+",
     label: "Sessions",
     icon: (
       <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -48,7 +52,8 @@ const stats: Stat[] = [
     ),
   },
   {
-    value: "3",
+    value: 3,
+    suffix: "",
     label: "Days of Innovation",
     icon: (
       <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -64,6 +69,7 @@ const stats: Stat[] = [
 ]
 
 import { Link } from "@tanstack/react-router"
+import { AnimatedCounter } from "./AnimatedCounter"
 
 export function CTASection() {
   return (
@@ -95,7 +101,11 @@ export function CTASection() {
               <div className="mb-3 rounded-full bg-gradient-to-br from-brand-red to-pink-600 p-3 text-white">
                 {stat.icon}
               </div>
-              <div className="mb-1 text-4xl font-bold text-white">{stat.value}</div>
+              <AnimatedCounter
+                end={stat.value}
+                suffix={stat.suffix}
+                className="mb-1 text-4xl font-bold text-white"
+              />
               <div className="text-center text-sm font-medium text-white/80">
                 {stat.label}
               </div>

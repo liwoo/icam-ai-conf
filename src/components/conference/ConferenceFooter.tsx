@@ -40,8 +40,7 @@ export function ConferenceFooter() {
                 </svg>
               </div>
               <div className="flex flex-col gap-1 text-sm">
-                <div className="font-semibold">+123 456 7890</div>
-                <div className="text-white/70">+123 456 7899</div>
+                <div className="font-semibold">+265 884 997 346</div>
               </div>
             </div>
             <div className="flex items-start gap-3">
@@ -62,7 +61,7 @@ export function ConferenceFooter() {
               </div>
               <div className="text-sm">
                 <div className="font-semibold text-white/80">
-                  robinhood@email.com
+                  info@ictam.org.mw
                 </div>
               </div>
             </div>
@@ -106,20 +105,20 @@ export function ConferenceFooter() {
               <a
                 href="#"
                 className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-white/20"
-                aria-label="Twitter"
+                aria-label="X (Twitter)"
               >
                 <svg
                   className="h-5 w-5 text-white"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
-                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                 </svg>
               </a>
             </div>
             <div className="text-sm text-white/70">
-              <div>06 Sister Jhcry CIEF 06</div>
-              <div>Ameria Boord Sahli</div>
+              <div>Filimoni House, City Centre</div>
+              <div>P.O. Box 31076, Lilongwe 3</div>
             </div>
             <a
               href="#register"

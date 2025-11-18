@@ -1,4 +1,55 @@
+"use client"
+
+import { useEffect, useRef, useState } from "react"
+
 export function HeadlinerSection() {
+  const imageRef = useRef<HTMLImageElement>(null)
+  const [skewY, setSkewY] = useState(0)
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY
+    let ticking = false
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY
+          const delta = currentScrollY - lastScrollY
+
+          // Calculate skew based on scroll direction
+          // Positive delta (scrolling down) = skew one way
+          // Negative delta (scrolling up) = skew the other way
+          const newSkew = Math.max(-2, Math.min(2, delta * 0.2))
+          setSkewY(newSkew)
+
+          lastScrollY = currentScrollY
+          ticking = false
+        })
+        ticking = true
+      }
+    }
+
+    // Reset skew when not scrolling
+    let resetTimeout: NodeJS.Timeout
+    const resetSkew = () => {
+      clearTimeout(resetTimeout)
+      resetTimeout = setTimeout(() => {
+        setSkewY(0)
+      }, 150)
+    }
+
+    const handleScrollWithReset = () => {
+      handleScroll()
+      resetSkew()
+    }
+
+    window.addEventListener("scroll", handleScrollWithReset, { passive: true })
+    return () => {
+      window.removeEventListener("scroll", handleScrollWithReset)
+      clearTimeout(resetTimeout)
+    }
+  }, [])
+
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-[#0a1628] via-[#0f1e35] to-[#0a1628]">
       {/* Full-width top bar */}
@@ -94,7 +145,7 @@ export function HeadlinerSection() {
             </div>
 
             {/* DESKTOP ONLY: Left side text content - takes 3 columns */}
-            <div className="col-span-3 hidden space-y-4 self-end pb-16 lg:block">
+            <div className="col-span-3 hidden space-y-4 self-center lg:block lg:-mb-32">
               {/* Full credentials - LARGER text */}
               <div>
                 <h3 className="font-heading uppercase leading-[0.9] tracking-tight">
@@ -130,10 +181,15 @@ export function HeadlinerSection() {
               </div>
 
               <img
+                ref={imageRef}
                 src="/images/speakers/ansah.png"
                 alt="Dr. Jane Ansah - Vice President of the Republic of Malawi"
-                className="relative z-10 h-auto w-full max-w-[1000px] object-contain object-bottom drop-shadow-2xl"
-                style={{ maxHeight: '100%' }}
+                className="relative z-10 h-auto w-full max-w-[1000px] object-contain object-bottom drop-shadow-2xl transition-transform duration-300 ease-out"
+                style={{
+                  maxHeight: '100%',
+                  transformOrigin: 'bottom center',
+                  transform: `translateY(${Math.abs(skewY) * 2}px) skewY(${skewY}deg) scale(${1 + Math.abs(skewY) * 0.015})`
+                }}
               />
 
               {/* Event logo badge at bottom-right of image */}
@@ -147,7 +203,7 @@ export function HeadlinerSection() {
             </div>
 
             {/* DESKTOP ONLY: Right side title - takes 3 columns */}
-            <div className="col-span-3 hidden space-y-6 self-end pb-16 text-right lg:block">
+            <div className="col-span-3 hidden space-y-6 self-center text-right lg:block lg:-mb-32">
               {/* Title */}
               <div>
                 <h3 className="font-heading text-4xl font-black uppercase leading-[0.9] tracking-tight text-white xl:text-5xl">

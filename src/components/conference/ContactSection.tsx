@@ -242,13 +242,15 @@ export function ContactSection() {
                     </svg>
                   </div>
                   <div>
-                    <h4 className="mb-1 font-bold text-brand-black">Venue Address</h4>
+                    <h4 className="mb-1 font-bold text-brand-black">Office Address</h4>
                     <p className="text-sm leading-relaxed text-neutral-600">
-                      Sunbird Nkopola Lodge
+                      Filimoni House, City Centre
                       <br />
-                      Mangochi, Lake Malawi
+                      ICT Association of Malawi
                       <br />
-                      Malawi
+                      P.O. Box 31076
+                      <br />
+                      Lilongwe 3
                     </p>
                   </div>
                 </div>
@@ -272,8 +274,7 @@ export function ContactSection() {
                   </div>
                   <div>
                     <h4 className="mb-1 font-bold text-brand-black">Phone</h4>
-                    <p className="text-sm text-neutral-600">+265 1 234 567</p>
-                    <p className="text-sm text-neutral-600">+265 888 123 456</p>
+                    <p className="text-sm text-neutral-600">+265 884 997 346</p>
                   </div>
                 </div>
 
@@ -297,7 +298,6 @@ export function ContactSection() {
                   <div>
                     <h4 className="mb-1 font-bold text-brand-black">Email</h4>
                     <p className="text-sm text-neutral-600">info@ictam.org.mw</p>
-                    <p className="text-sm text-neutral-600">agm@ictam.org.mw</p>
                   </div>
                 </div>
 
@@ -337,14 +337,14 @@ export function ContactSection() {
                       <a
                         href="#"
                         className="flex h-9 w-9 items-center justify-center rounded-full bg-neutral-100 text-neutral-600 transition-colors hover:bg-brand-red hover:text-white"
-                        aria-label="Twitter"
+                        aria-label="X (Twitter)"
                       >
                         <svg
                           className="h-4 w-4"
                           fill="currentColor"
                           viewBox="0 0 24 24"
                         >
-                          <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+                          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                         </svg>
                       </a>
                       <a

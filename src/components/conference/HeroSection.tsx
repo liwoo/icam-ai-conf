@@ -1,7 +1,6 @@
 import { AnimatedTitle } from "./AnimatedTitle"
 import { Countdown } from "./Countdown"
 import { TypewriterText } from "./TypewriterText"
-import { ConferenceBadge } from "@/components/ui/conference-badge"
 
 export function HeroSection() {
   return (
@@ -58,15 +57,20 @@ export function HeroSection() {
             <h2 className="mt-4 max-w-4xl text-2xl font-bold text-white lg:hidden">
               AI for Sustainable Development
             </h2>
-            <TypewriterText
-              text="AI for Sustainable Development"
-              delay={800}
-              speed={60}
-              className="mt-6 hidden max-w-4xl text-4xl font-bold tracking-tight text-transparent lg:mt-8 lg:block lg:text-5xl"
-              style={{
-                WebkitTextStroke: "1.5px white",
-              }}
-            />
+            <div className="hidden lg:block">
+              <TypewriterText
+                text="AI for Sustainable Development"
+                delay={800}
+                speed={60}
+                className="mt-6 max-w-4xl text-4xl font-bold tracking-tight text-transparent lg:mt-8 lg:text-5xl"
+                style={{
+                  WebkitTextStroke: "1.5px white",
+                }}
+              />
+              <p className="mt-4 max-w-4xl text-2xl font-semibold text-white lg:text-3xl">
+                Advancing Malawi&apos;s Digital Future
+              </p>
+            </div>
 
             {/* Register Now Button - Visible on both mobile and desktop */}
             <a
