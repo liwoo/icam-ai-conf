@@ -1,1 +1,1 @@
-export const APP_NAME = "SPA Starter"
+export const APP_NAME = "ICTAM AGM 2025"
