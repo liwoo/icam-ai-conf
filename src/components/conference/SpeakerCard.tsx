@@ -22,8 +22,8 @@ interface SpeakerCardProps {
 }
 
 export function SpeakerCard({ speaker, isMobile = false }: SpeakerCardProps) {
-  const imageSize = isMobile ? "h-40 w-40" : "h-64 w-64"
-  const borderWidth = isMobile ? "border-4" : "border-[6px]"
+  const imageSize = isMobile ? "h-32 w-32" : "h-64 w-64"
+  const borderWidth = isMobile ? "border-[3px]" : "border-[6px]"
 
   return (
     <Link

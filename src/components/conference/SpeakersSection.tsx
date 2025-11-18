@@ -212,16 +212,6 @@ export function SpeakersSection() {
               />
             ))}
           </div>
-
-          {/* Progress bar */}
-          <div className="mt-4 px-4">
-            <div className="h-1 w-full overflow-hidden rounded-full bg-gray-200">
-              <div
-                className="h-full bg-gradient-to-r from-brand-red to-pink-600 transition-all duration-300"
-                style={{ width: `${((currentSlide + 1) / speakers.length) * 100}%` }}
-              />
-            </div>
-          </div>
         </div>
 
         {/* Desktop: Grid layout */}
