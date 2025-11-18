@@ -2,6 +2,7 @@ import { createFileRoute, Outlet } from "@tanstack/react-router"
 
 import { ConferenceFooter } from "@/components/conference/ConferenceFooter"
 import { ConferenceHeader } from "@/components/conference/ConferenceHeader"
+import { ScrollToTop } from "@/components/ui/scroll-to-top"
 
 export const Route = createFileRoute("/_base")({
   component: BaseLayout,
@@ -17,6 +18,7 @@ function BaseLayout() {
       </main>
 
       <ConferenceFooter />
+      <ScrollToTop />
     </div>
   )
 }

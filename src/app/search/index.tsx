@@ -5,6 +5,7 @@ import { createFileRoute, useNavigate } from "@tanstack/react-router"
 import conferenceData from "@/data/conference.json"
 import linksData from "@/data/links.json"
 import programmeData from "@/data/programme.json"
+import { ScrollToTop } from "@/components/ui/scroll-to-top"
 
 export const Route = createFileRoute("/search/")({
   component: SearchPage,
@@ -198,7 +199,9 @@ function SearchPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-50">
+    <>
+      <ScrollToTop />
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-50">
       {/* Header */}
       <div className="border-b border-neutral-200 bg-white">
         <div className="mx-auto max-w-4xl px-6 py-8">
@@ -328,5 +331,6 @@ function SearchPage() {
         </div>
       </div>
     </div>
+    </>
   )
 }
