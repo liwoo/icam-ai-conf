@@ -280,6 +280,74 @@
         "facebook": "https://www.facebook.com/HESLGBOFFICIALPAGE/",
         "linkedin": "https://mw.linkedin.com/company/higher-education-students-loans-and-grants-board-heslgb"
       }
+    },
+    {
+      "id": "nxtgen",
+      "name": "NxtGen Labs",
+      "fullName": "NxtGen Labs Malawi",
+      "logo": "/logos/NxtGen Logo.png",
+      "type": "sponsor",
+      "category": "technology",
+      "tier": "silver",
+      "description": "Malawi's premier innovation lab for emerging technologies, specializing in IoT, AI, Robotics, Blockchain, and XR, while training youth in Fourth Industrial Revolution technologies",
+      "website": "https://nxtgenlabs.ai",
+      "established": "2021",
+      "establishedBy": "Eugene Maseya",
+      "about": "NxtGen Labs is Malawi's largest private innovation lab dedicated to emerging technologies. Operating as both an innovation hub developing cutting-edge technology solutions and an educational facility, the lab serves over 80 students in coding and robotics programs while partnering with major organizations including UNDP, EU, and World Bank.",
+      "mission": "To become a leading Lab and center of excellence in the Region for training and development of innovations and products in emerging technologies such as Robotics, IoT, Machine Learning, AI, Blockchain and Virtual Reality",
+      "mandate": [
+        "Develop innovative technology solutions for clients",
+        "Train youth in Fourth Industrial Revolution technologies",
+        "Support Malawi 2063 Agenda through human capital development",
+        "Incubate and accelerate tech startups",
+        "Bridge gap between traditional education and emerging tech skills"
+      ],
+      "services": [
+        "Extended Reality (VR/AR/MR) Development",
+        "Software & Mobile App Development",
+        "IoT and Hardware Solutions",
+        "Game Development",
+        "CGI and Visual Effects",
+        "Coding & Robotics Education",
+        "Startup Incubation & Acceleration",
+        "Blockchain Solutions"
+      ],
+      "programs": [
+        "Coding & Robotics for Kids (Ages 5-17)",
+        "Zantchito Entrepreneurship Program",
+        "Graduate Training Program",
+        "Innovation Discovery Workshops",
+        "In-School Robotics Clubs",
+        "AI Boot Camps"
+      ],
+      "partners": [
+        "UNDP",
+        "European Union",
+        "World Bank",
+        "Ministry of Education Malawi",
+        "EGENCO",
+        "Save the Children Malawi",
+        "SKC Foundation"
+      ],
+      "achievements": [
+        "App Factory Accelerator with 15M Kwacha prize pool",
+        "80+ students enrolled in coding programs",
+        "150 participants in Zantchito program",
+        "Educational math game deployed in secondary schools",
+        "VR power monitoring system for EGENCO"
+      ],
+      "location": "Next to Automotive Products Limited, Along M12, Near Gateway Mall Roundabout, Lilongwe",
+      "contact": {
+        "phone": "+265 981 34 00 88",
+        "email": "info@nxtgenlabs.mw"
+      },
+      "socialMedia": {
+        "facebook": "https://www.facebook.com/NxtGenLabs/",
+        "linkedin": "https://mw.linkedin.com/company/nxtgenlabs",
+        "instagram": "https://www.instagram.com/nxtgenlabs_mw/",
+        "twitter": "https://x.com/nxtgenlabs_mw",
+        "github": "https://github.com/NxtGenLabs"
+      }
     }
   ],
   "logoCategories": {
@@ -301,7 +369,7 @@
     "silver": {
       "title": "Silver Sponsors",
       "description": "Supporting partners contributing to the success of the event",
-      "logos": ["oranux", "heslb"]
+      "logos": ["oranux", "heslb", "nxtgen"]
     }
   },
   "displaySettings": {
