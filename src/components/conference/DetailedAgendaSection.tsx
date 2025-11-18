@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { useNavigate, useSearch } from "@tanstack/react-router"
 import { PageTitle } from "@/components/ui/page-title"
 import { Subtitle } from "@/components/ui/subtitle"
 import { ConferenceBadge } from "@/components/ui/conference-badge"
@@ -70,10 +71,56 @@ const sessionTypeConfig: Record<
 }
 
 export function DetailedAgendaSection() {
+  const navigate = useNavigate()
+  const searchParams = useSearch({ from: "/_base/programme/" })
   const [selectedFilters, setSelectedFilters] = useState<string[]>([])
   const [selectedDay, setSelectedDay] = useState<number | "all">("all")
+  const [searchQuery, setSearchQuery] = useState("")
 
   const schedule = programmeData.schedule as DaySchedule[]
+
+  // Helper function to format day labels
+  const formatDayLabel = (dayString: string): string => {
+    // Input: "Tuesday, 18 November 2025"
+    // Output: "Tue, 18 Nov"
+    const parts = dayString.split(", ")
+    if (parts.length < 2) return dayString
+
+    const dayOfWeek = parts[0].substring(0, 3) // "Tue"
+    const dateMonth = parts[1].split(" ")
+    if (dateMonth.length < 2) return dayString
+
+    const day = dateMonth[0] // "18"
+    const month = dateMonth[1].substring(0, 3) // "Nov"
+
+    return `${dayOfWeek}, ${day} ${month}`
+  }
+
+  // Initialize search from URL parameter
+  useEffect(() => {
+    const urlSearch = (searchParams as { s?: string })?.s
+    if (urlSearch) {
+      setSearchQuery(decodeURIComponent(urlSearch))
+    }
+  }, [searchParams])
+
+  // Update URL when search changes
+  const handleSearchChange = (value: string) => {
+    setSearchQuery(value)
+    if (value.trim()) {
+      navigate({
+        to: "/programme",
+        search: { s: value.trim() },
+        replace: true,
+      })
+    } else {
+      navigate({
+        to: "/programme",
+        search: {},
+        replace: true,
+      })
+    }
+  }
 
   // Get unique session types for filter
   const sessionTypes = Array.from(
@@ -92,9 +139,15 @@ export function DetailedAgendaSection() {
   // Clear all filters
   const clearFilters = () => {
     setSelectedFilters([])
+    setSearchQuery("")
+    navigate({
+      to: "/programme",
+      search: {},
+      replace: true,
+    })
   }
 
-  // Filter schedule by selected day and session types
+  // Filter schedule by selected day, session types, and search query
   const filteredSchedule = schedule
     .filter((day, index) => {
       // Filter by day
@@ -103,12 +156,20 @@ export function DetailedAgendaSection() {
     })
     .map((day) => ({
       ...day,
-      sessions:
-        selectedFilters.length === 0
-          ? day.sessions
-          : day.sessions.filter((session) =>
-              selectedFilters.includes(session.type)
-            ),
+      sessions: day.sessions
+        .filter((session) => {
+          // Filter by session type
+          if (selectedFilters.length > 0 && !selectedFilters.includes(session.type)) {
+            return false
+          }
+          // Filter by search query
+          if (searchQuery.trim()) {
+            const query = searchQuery.toLowerCase()
+            const searchableText = `${session.title} ${session.speaker || ""} ${session.type} ${session.venue || ""}`.toLowerCase()
+            return searchableText.includes(query)
+          }
+          return true
+        }),
     }))
     .filter((day) => day.sessions.length > 0) // Remove days with no sessions after filtering
 
@@ -200,23 +261,29 @@ export function DetailedAgendaSection() {
   }
 
   return (
-    <section id="detailed-agenda" className="relative bg-white py-20">
-      <div className="relative mx-auto max-w-7xl px-6">
-        {/* Header */}
-        <div className="mb-12 text-center">
-          <ConferenceBadge variant="gradient" size="md" className="mb-4">
+    <section id="detailed-agenda" className="relative bg-white">
+      {/* Full-width banner for title */}
+      <div className="relative overflow-hidden bg-gradient-to-br from-brand-dark-red via-brand-black to-black py-16">
+        {/* Decorative background pattern */}
+        <div className="pointer-events-none absolute inset-0 opacity-10">
+          <div className="absolute -left-20 -top-20 h-64 w-64 rounded-full bg-white blur-3xl" />
+          <div className="absolute -right-20 -bottom-20 h-64 w-64 rounded-full bg-white blur-3xl" />
+        </div>
+
+        <div className="relative mx-auto max-w-7xl px-6 text-center">
+          <ConferenceBadge variant="gradient" size="md" className="mb-4 bg-gradient-to-r from-brand-red to-pink-600">
             Complete Schedule
           </ConferenceBadge>
-          <PageTitle size="xl" align="center">
+          <PageTitle size="xl" align="center" className="text-white">
             Detailed Programme
           </PageTitle>
-          <Subtitle size="lg" className="mx-auto mt-4 max-w-3xl" align="center">
+          <Subtitle size="lg" className="mx-auto mt-4 max-w-3xl text-white/90" align="center">
             {programmeData.event}
           </Subtitle>
-          <div className="mt-4 flex flex-col items-center gap-2 text-neutral-600">
+          <div className="mt-4 flex flex-col items-center gap-2 text-white/90">
             <div className="flex items-center gap-2">
               <svg
-                className="h-5 w-5 text-brand-red"
+                className="h-5 w-5 text-white"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -232,7 +299,7 @@ export function DetailedAgendaSection() {
             </div>
             <div className="flex items-center gap-2">
               <svg
-                className="h-5 w-5 text-brand-red"
+                className="h-5 w-5 text-white"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -254,6 +321,64 @@ export function DetailedAgendaSection() {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Main content area */}
+      <div className="relative mx-auto max-w-7xl px-6 py-12">
+
+        {/* Search Input */}
+        <div className="mb-8 mx-auto max-w-2xl">
+          <div className="relative">
+            <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
+              <svg
+                className="h-5 w-5 text-neutral-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+            </div>
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => handleSearchChange(e.target.value)}
+              placeholder="Search sessions, speakers, venues..."
+              className="w-full rounded-xl border border-neutral-300 bg-white py-3 pl-12 pr-12 text-brand-black shadow-sm transition-all focus:border-brand-red focus:outline-none focus:ring-4 focus:ring-brand-red/20"
+            />
+            {searchQuery && (
+              <button
+                onClick={() => handleSearchChange("")}
+                className="absolute inset-y-0 right-0 flex items-center pr-4 text-neutral-400 hover:text-brand-red transition-colors"
+                aria-label="Clear search"
+              >
+                <svg
+                  className="h-5 w-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            )}
+          </div>
+          {searchQuery && (
+            <p className="mt-2 text-sm text-neutral-600">
+              Filtering results for &quot;{searchQuery}&quot;
+            </p>
+          )}
+        </div>
 
         {/* Day Tabs */}
         <div className="mb-8 flex flex-wrap justify-center gap-2">
@@ -271,13 +396,13 @@ export function DetailedAgendaSection() {
             <button
               key={index}
               onClick={() => setSelectedDay(index)}
-              className={`rounded-lg px-6 py-3 text-sm font-semibold transition-all ${
+              className={`rounded-lg px-4 py-3 text-sm font-semibold transition-all ${
                 selectedDay === index
                   ? "bg-brand-red text-white shadow-lg shadow-brand-red/30"
                   : "bg-neutral-100 text-neutral-700 hover:bg-neutral-200"
               }`}
             >
-              {day.day}
+              {formatDayLabel(day.day)}
             </button>
           ))}
         </div>

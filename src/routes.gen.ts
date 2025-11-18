@@ -14,6 +14,7 @@ import { createFileRoute } from "@tanstack/react-router"
 
 import { Route as rootRoute } from "./app/__root"
 import { Route as BaseImport } from "./app/_base"
+import { Route as SearchIndexImport } from "./app/search/index"
 import { Route as BaseIndexImport } from "./app/_base/index"
 import { Route as BaseProgrammeIndexImport } from "./app/_base/programme/index"
 import { Route as BaseSponsorsSponsorIdImport } from "./app/_base/sponsors/$sponsorId"
@@ -38,6 +39,11 @@ const BaseRoute = BaseImport.update({
 const BaseBlogRoute = BaseBlogImport.update({
   path: "/blog",
   getParentRoute: () => BaseRoute,
+} as any)
+
+const SearchIndexRoute = SearchIndexImport.update({
+  path: "/search/",
+  getParentRoute: () => rootRoute,
 } as any)
 
 const BaseIndexRoute = BaseIndexImport.update({
@@ -102,6 +108,13 @@ declare module "@tanstack/react-router" {
       fullPath: "/"
       preLoaderRoute: typeof BaseIndexImport
       parentRoute: typeof BaseImport
+    }
+    "/search/": {
+      id: "/search/"
+      path: "/search"
+      fullPath: "/search"
+      preLoaderRoute: typeof SearchIndexImport
+      parentRoute: typeof rootRoute
     }
     "/_base/blog": {
       id: "/_base/blog"
@@ -188,6 +201,7 @@ export const routeTree = rootRoute.addChildren({
     BaseSponsorsSponsorIdRoute,
     BaseProgrammeIndexRoute,
   }),
+  SearchIndexRoute,
 })
 
 /* prettier-ignore-end */
@@ -198,7 +212,8 @@ export const routeTree = rootRoute.addChildren({
     "__root__": {
       "filePath": "__root.tsx",
       "children": [
-        "/_base"
+        "/_base",
+        "/search/"
       ]
     },
     "/_base": {
@@ -214,6 +229,9 @@ export const routeTree = rootRoute.addChildren({
     "/_base/": {
       "filePath": "_base/index.tsx",
       "parent": "/_base"
+    },
+    "/search/": {
+      "filePath": "search/index.tsx"
     },
     "/_base/blog": {
       "filePath": "_base/blog",

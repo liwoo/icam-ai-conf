@@ -91,6 +91,28 @@ export function ConferenceHeader() {
 
         {/* Actions */}
         <div className="flex items-center gap-4">
+          {/* Search Button */}
+          <button
+            type="button"
+            onClick={() => navigate({ to: "/search" })}
+            className="rounded-lg p-2 transition-colors hover:bg-neutral-100"
+            aria-label="Search"
+          >
+            <svg
+              className="h-6 w-6 text-neutral-700"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              />
+            </svg>
+          </button>
+
           {/* Hamburger Menu Button - Mobile Only */}
           <button
             type="button"
