@@ -86,12 +86,12 @@ export function DetailedAgendaSection() {
     const parts = dayString.split(", ")
     if (parts.length < 2) return dayString
 
-    const dayOfWeek = parts[0].substring(0, 3) // "Tue"
-    const dateMonth = parts[1].split(" ")
-    if (dateMonth.length < 2) return dayString
+    const dayOfWeek = parts[0]?.substring(0, 3) // "Tue"
+    const dateMonth = parts[1]?.split(" ")
+    if (!dateMonth || dateMonth.length < 2) return dayString
 
     const day = dateMonth[0] // "18"
-    const month = dateMonth[1].substring(0, 3) // "Nov"
+    const month = dateMonth[1]?.substring(0, 3) // "Nov"
 
     return `${dayOfWeek}, ${day} ${month}`
   }

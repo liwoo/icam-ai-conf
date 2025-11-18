@@ -183,8 +183,8 @@ export function SpeakersSection() {
             onMouseMove={(e) => handleDragMove(e.clientX)}
             onMouseUp={handleDragEnd}
             onMouseLeave={handleDragEnd}
-            onTouchStart={(e) => handleDragStart(e.touches[0].clientX)}
-            onTouchMove={(e) => handleDragMove(e.touches[0].clientX)}
+            onTouchStart={(e) => handleDragStart(e.touches[0]?.clientX ?? 0)}
+            onTouchMove={(e) => handleDragMove(e.touches[0]?.clientX ?? 0)}
             onTouchEnd={handleDragEnd}
           >
             {speakers.map((speaker) => (

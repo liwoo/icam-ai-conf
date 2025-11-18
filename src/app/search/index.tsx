@@ -3,7 +3,6 @@
 import { useState, useMemo } from "react"
 import { createFileRoute, useNavigate } from "@tanstack/react-router"
 import conferenceData from "@/data/conference.json"
-import linksData from "@/data/links.json"
 import programmeData from "@/data/programme.json"
 import { ScrollToTop } from "@/components/ui/scroll-to-top"
 
@@ -12,7 +11,7 @@ export const Route = createFileRoute("/search/")({
 })
 
 interface SearchResult {
-  type: "speaker" | "sponsor" | "session" | "link" | "day"
+  type: "speaker" | "session" | "day"
   title: string
   description: string
   link: string
@@ -52,48 +51,21 @@ function SearchPage() {
       })
     }
 
-    // Add sponsors (if exists)
-    if (conferenceData.sponsors && Array.isArray(conferenceData.sponsors)) {
-      conferenceData.sponsors.forEach((sponsor) => {
-        const slug = createSlug(sponsor.name)
-        results.push({
-          type: "sponsor",
-          title: sponsor.name,
-          description: `${sponsor.tier} Sponsor`,
-          link: `/sponsors/${slug}`,
-          category: sponsor.tier,
-          slug,
-        })
-      })
-    }
-
     // Add programme sessions
     if (programmeData.schedule && Array.isArray(programmeData.schedule)) {
       programmeData.schedule.forEach((day) => {
         if (day.sessions && Array.isArray(day.sessions)) {
           day.sessions.forEach((session) => {
+            const speaker = "speaker" in session ? session.speaker : undefined
             results.push({
               type: "session",
               title: session.title,
-              description: `${session.time} - ${day.day}${session.speaker ? ` by ${session.speaker}` : ""}`,
+              description: `${session.time} - ${day.day}${speaker ? ` by ${speaker}` : ""}`,
               link: `/programme?s=${encodeURIComponent(session.title)}`,
               category: session.type || "Session",
             })
           })
         }
-      })
-    }
-
-    // Add links
-    if (linksData.links && Array.isArray(linksData.links)) {
-      linksData.links.forEach((link) => {
-        results.push({
-          type: "link",
-          title: link.title,
-          description: link.description,
-          link: link.url,
-          category: link.category,
-        })
       })
     }
 
@@ -133,13 +105,13 @@ function SearchPage() {
       navigate({ to: "/" })
       setTimeout(() => {
         const sectionId = link.split("#")[1]
-        const element = document.getElementById(sectionId)
+        const element = sectionId ? document.getElementById(sectionId) : null
         if (element) {
           element.scrollIntoView({ behavior: "smooth", block: "start" })
         }
       }, 100)
     } else {
-      // Internal route (speakers, sponsors, programme with query params)
+      // Internal route (speakers, programme with query params)
       window.location.href = link
     }
   }
@@ -152,22 +124,10 @@ function SearchPage() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
           </svg>
         )
-      case "sponsor":
-        return (
-          <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-          </svg>
-        )
       case "session":
         return (
           <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-          </svg>
-        )
-      case "link":
-        return (
-          <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
           </svg>
         )
       case "day":
@@ -185,12 +145,8 @@ function SearchPage() {
     switch (type) {
       case "speaker":
         return "bg-blue-100 text-blue-800"
-      case "sponsor":
-        return "bg-purple-100 text-purple-800"
       case "session":
         return "bg-green-100 text-green-800"
-      case "link":
-        return "bg-orange-100 text-orange-800"
       case "day":
         return "bg-pink-100 text-pink-800"
       default:
@@ -216,7 +172,7 @@ function SearchPage() {
           </button>
           <h1 className="mb-2 text-4xl font-bold text-brand-black">Search</h1>
           <p className="text-neutral-600">
-            Search for speakers, sponsors, sessions, and more
+            Search for speakers, sessions, and more
           </p>
         </div>
       </div>
@@ -243,7 +199,7 @@ function SearchPage() {
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search speakers, sponsors, sessions..."
+            placeholder="Search speakers, sessions..."
             className="w-full rounded-xl border border-neutral-300 bg-white py-4 pl-12 pr-4 text-lg text-brand-black shadow-sm transition-all focus:border-brand-red focus:outline-none focus:ring-4 focus:ring-brand-red/20"
             autoFocus
           />
@@ -324,7 +280,7 @@ function SearchPage() {
               </svg>
               <h3 className="mt-4 text-lg font-bold text-neutral-700">Start searching</h3>
               <p className="mt-2 text-sm text-neutral-500">
-                Enter keywords to search through speakers, sponsors, sessions, and more
+                Enter keywords to search through speakers, sessions, and more
               </p>
             </div>
           )}
